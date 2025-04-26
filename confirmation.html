@@ -1,0 +1,37 @@
+<!-- confirmation.html -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تأكيد الحجز</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h2>تم حجزك بنجاح!</h2>
+    <p>تفاصيل الحجز:</p>
+  </header>
+
+  <section id="details" style="margin-top: 30px;"></section>
+
+  <a href="index.html" class="btn" style="margin-top: 20px;">رجوع إلى الصفحة الرئيسية</a>
+
+  <script>
+    const bookingData = JSON.parse(localStorage.getItem("qatBooking"));
+
+    if (bookingData) {
+      const details = `
+        <p><strong>الاسم:</strong> ${bookingData.name}</p>
+        <p><strong>نوع القات:</strong> ${bookingData.qatType}</p>
+        <p><strong>الكمية:</strong> ${bookingData.quantity} وحدة</p>
+        <p><strong>التاريخ:</strong> ${bookingData.date}</p>
+        <p><strong>الوقت:</strong> ${bookingData.time}</p>
+      `;
+      document.getElementById("details").innerHTML = details;
+    } else {
+      document.getElementById("details").innerHTML = "<p>لا توجد بيانات حجز.</p>";
+    }
+  </script>
+</body>
+</html>
