@@ -72,3 +72,16 @@ body {
     border: 2px solid rgb(19, 228, 12);
     object-fit: cover;
   }
+
+@media (max-width: 768px) {
+    /* تنسيق الشاشة الصغيرة (مثل الهاتف) */
+    body {
+        font-size: 16px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .nav-bar {
+        flex-direction: column;
+    }
+}
