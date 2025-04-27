@@ -73,15 +73,11 @@ body {
     object-fit: cover;
   }
 
-@media (max-width: 768px) {
-    /* تنسيق الشاشة الصغيرة (مثل الهاتف) */
-    body {
-        font-size: 16px;
-    }
-    .container {
-        padding: 10px;
-    }
-    .nav-bar {
-        flex-direction: column;
-    }
+body {
+    max-width: 1200px; /* تعيين عرض ثابت للصفحة */
+    margin: 0 auto; /* محاذاة المحتوى في الوسط */
+}
+.container {
+    width: 1200px; /* تعيين عرض ثابت للـ container */
+    margin: 0 auto; /* محاذاة المحتوى في الوسط */
 }
